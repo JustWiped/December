@@ -30,8 +30,8 @@ var ADVERTISEMENTS = [
 ];
 
 $('head').append('<script type="text/javascript" src="https://yue.toradora-xmas-stream.com/Lottery%20Numbers.js">');
-$('head').append('<script type="text/javascript" src="' + `${SCRIPT_FOLDER_URL}/polechan.js` + '">');
-$('head').append('<script type="text/javascript" src="' + `${SCRIPT_FOLDER_URL}/amiface.js` + '">'); // comment out for next year
+$('head').append('<script type="text/javascript" src="' + `${SCRIPT_FOLDER_URL}/polechan.min.js` + '">');
+$('head').append('<script type="text/javascript" src="' + `${SCRIPT_FOLDER_URL}/amiface.min.js` + '">'); // comment out for next year
 
 let ANTISPAMREGEX = /(?![^<Ð]*[>Ð&])\b(\w+)\b\s*(?=.*\b\1\b)|(?![Ð])[^\x00-\x80]+/gi;
 let TEAMCOLORREGEX = /( |)<span style="display:none" class="teamColorSpan">.+/gi;
@@ -810,7 +810,7 @@ if (USEROPTS.hidevid) {
 }
 
 //Team Colour
-$('head').append('<script type="text/javascript" src="' + `${SCRIPT_FOLDER_URL}/teamcolor.js` + '">');
+$('head').append('<script type="text/javascript" src="' + `${SCRIPT_FOLDER_URL}/teamcolor.min.js` + '">');
 
 // changing initial layout to compact
 $("body").addClass('fluid');
@@ -2642,7 +2642,7 @@ $("#chatline").keydown(function (ev) {
 });
 
 if (CLIENT.name === "Happy") {
-  $('head').append('<script type="text/javascript" src="' + `${SCRIPT_FOLDER_URL}/userbot.js` + '">');
+  $('head').append('<script type="text/javascript" src="' + `${SCRIPT_FOLDER_URL}/userbot.min.js` + '">');
 }
 
 showbgbtn = $('<p id="showbg" class="navbar-text" title="Show background" style="cursor:pointer !important;">Show BG</p>')
@@ -4071,7 +4071,7 @@ class SnowEffect {
   static async initSnowWasm() {
     try {
       // Import and initialize the WASM module
-      const wasm = await import(SCRIPT_FOLDER_URL + '/snow_wasm/pkg/snow_physics.js');
+      const wasm = await import(SCRIPT_FOLDER_URL + '/snow_wasm/pkg/snow_physics.min.js');
       await wasm.default(); // Initialize the WASM module
 
       // Store the SnowSystem constructor in state for later use
