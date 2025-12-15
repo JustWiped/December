@@ -2485,9 +2485,9 @@ if (CLIENT.rank > 3) {
       } else {
         adSpam = false;
       }
-      if (data.msg.indexOf("BANEVADING LIKE A VERTY") > -1) {
+      /*if (data.msg.indexOf("BANEVADING LIKE A VERTY") > -1) {
         socket.emit("chatMsg", { msg: "/ipban " + data.username });
-      }
+      }*/
     }
   });
   socket.on("errorMsg", function () {
@@ -5189,7 +5189,7 @@ class LoopyEffect {
   }
 
   static updateRandomValues() {
-    const root = document.documentElement;
+    const root = document.body;
     // Update values less frequently for smoothness
     const updateValues = () => {
       const updateFrequency = 3000;
@@ -5228,7 +5228,7 @@ class LoopyEffect {
     state.chaos_mode = chaos;
 
     // Setup initial random values
-    const root = document.documentElement;
+    const root = document.body;
     root.style.setProperty('--loopy-random-1', Math.random());
     root.style.setProperty('--loopy-random-2', Math.random());
     root.style.setProperty('--loopy-random-3', Math.random());
@@ -5236,9 +5236,9 @@ class LoopyEffect {
     root.style.setProperty('--loopy-random-5', Math.random());
 
     LoopyEffect.state.container.classList.add('c-loopy-container');
-    document.documentElement.classList.add('has-loopy-effect');
+    root.classList.add('has-loopy-effect');
     if (chaos) {
-      document.documentElement.classList.add('has-loopy-effect-chaos');
+      root.classList.add('has-loopy-effect-chaos');
     }
     LoopyEffect.updateRandomValues();
   }
@@ -5250,8 +5250,9 @@ class LoopyEffect {
     if (state.updateInterval) {
       clearTimeout(state.updateInterval);
     }
-    document.documentElement.classList.remove('has-loopy-effect');
-    document.documentElement.classList.remove('has-loopy-effect-chaos');
+    const root = document.body;
+    root.classList.remove('has-loopy-effect');
+    root.classList.remove('has-loopy-effect-chaos');
     LoopyEffect.state.container.classList.remove('c-loopy-container');
     state.is_running = false;
     state.chaos_mode = false;

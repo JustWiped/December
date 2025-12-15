@@ -448,7 +448,7 @@ span.glyphicon.glyphicon-time {
   animation: effect__padoru-shake 4s ease-in-out infinite;
 }
 .c-effect__padoru-outer {
-  position: fixed;
+  position: absolute  ;
   top: -56px;
   left: 0;
   animation: effect__padoru-fall 12s linear forwards;
