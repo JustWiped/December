@@ -4507,7 +4507,7 @@ class GhostBanriEffect {
       GhostBanriEffect.banri_timeout = null;
     }
 
-    if (!state.user_enabled) {
+    if (!state.user_enabled || !state.is_running) {
       return;
     }
 
